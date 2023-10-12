@@ -1,0 +1,59 @@
+<div class="container">
+    <h1>Movie List</h1>
+
+    <div class="row">
+        <div class="col">
+    
+            <table class="table table-striped table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col" class="text-center">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Year</th>
+                        <th scope="col">Director</th>
+                        <th scope="col">Rating</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="movieList">
+                    <!-- Repeatable Rows -->
+                   <% movies.forEach(movie => { %>
+    <p><%= movie.name %></p>
+    <!-- Include other properties as needed -->
+  <% }) %>
+</div>
+Rendered HTML:
+
+After the page loads, right-click on the page, select "Inspect" or "Inspect Element," and go to the "Elements" tab. Check the rendered HTML to see if the content you expect is present.
+Ensure Correct View File:
+
+Confirm that the res.render function is pointing to the correct EJS view file (movie-list.ejs). Double-check the route configuration and folder structure to make sure the correct view is being rendered.
+Clear Browser Cache:
+
+Sometimes, changes in the frontend may not reflect immediately due to cached content. Try clearing your browser cache and reloading the page.
+If none of these suggestions resolves the issue, please provide more details about the structure of your project, the contents of your EJS file, and any error messages you see in the browser console. This information will help in diagnosing and resolving the problem.
+
+
+
+
+
+
+
+                    
+                    <% for(let count = 0; count < movies.length; count++) { %>
+                        <tr>
+                            <th scope="row" class="text-center"><%= count + 1 %></th>
+                            <td><%= movies[count].Name %></td>
+                            <td><%= movies[count].Year %></td>
+                            <td><%= movies[count].Director %></td>
+                            <td><%= movies[count].Rating %></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
